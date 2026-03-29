@@ -118,6 +118,19 @@
     [data-theme="light"] .theme-toggle .icon-sun { display: none; }
     [data-theme="light"] .theme-toggle .icon-moon { display: inline; }
 
+    .card {
+      background: var(--bg);
+      border-radius: 12px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 2px 16px var(--shadow);
+      width: 100%;
+      max-width: 480px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2.5rem;
+    }
+
     .hero {
       text-align: center;
     }
@@ -159,12 +172,6 @@
 
     .contact {
       width: 100%;
-      max-width: 440px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 2rem;
-      box-shadow: 0 2px 12px var(--shadow);
     }
 
     .contact h2 {
@@ -243,7 +250,7 @@
 
     @media (max-width: 480px) {
       h1 { font-size: 2rem; }
-      .contact { max-width: 100%; }
+      .card { padding: 2rem 1.5rem; }
     }
   </style>
 </head>
@@ -254,16 +261,17 @@
     <span class="icon-moon">&#9728;</span>
   </button>
 
-  <section class="hero">
-    <h1>Leon Konrad</h1>
-    <p class="tagline">Software &amp; AI</p>
-    <div class="links">
-      <a href="https://linkedin.com/in/leon-konrad">LinkedIn</a>
-      <a href="mailto:leon@leonkonrad.de">Email</a>
-    </div>
-  </section>
+  <div class="card">
+    <section class="hero">
+      <h1>Leon Konrad</h1>
+      <p class="tagline">Software &amp; AI</p>
+      <div class="links">
+        <a href="https://linkedin.com/in/leon-konrad">LinkedIn</a>
+        <a href="mailto:leon@leonkonrad.de">Email</a>
+      </div>
+    </section>
 
-  <section class="contact">
+    <section class="contact">
     <h2>Get in touch</h2>
     <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
       <input type="hidden" name="access_key" value="a5c6c009-ed97-41fd-b07b-e8a76fdd94dc">
@@ -275,7 +283,8 @@
       <button type="submit">Send</button>
       <p class="form-status" id="form-status"></p>
     </form>
-  </section>
+    </section>
+  </div>
 
   <script>
     // Theme toggle
