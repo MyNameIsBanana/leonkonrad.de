@@ -288,9 +288,11 @@
       status.className = 'form-status';
 
       try {
+        const formData = Object.fromEntries(new FormData(form));
         const res = await fetch(form.action, {
           method: 'POST',
-          body: new FormData(form),
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData),
         });
         const data = await res.json();
         if (data.success) {
